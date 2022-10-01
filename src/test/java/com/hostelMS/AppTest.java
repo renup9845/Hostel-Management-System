@@ -90,7 +90,7 @@ public class AppTest{
 		User u = ses.get(User.class, 1);
 		
 		// FETCHING SAME USER FROM DATABASE USING DAO OBJECT AND PRIMARY KEY 
-		User a = dao.Login("KetanK", "K12345@");
+		User a = dao.Login("RenuR", "R12345@");
 		
 		assertAll(
 				// POSITIVE TEST CASE
@@ -101,7 +101,7 @@ public class AppTest{
 				// NEGATIVE TEST CASE
 				// GIVING WRONG USERNAME AND PASSWORD IN LOGIN METHOD
 				// EXPECTING AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.Login("KetanKumar", "K123456"))
+				()->assertThrows(GlobalException.class,()->dao.Login("RenuPrajapati", "R123456"))
 		);
 	}
 
@@ -295,12 +295,12 @@ public class AppTest{
 				// POSITIVE TEST CASE
 				// TESTING CHANGE CONTACT METHOD TO CHAGE CONTCT OF USER 2
 				// EXPECTING TO CHANGE USER 2 CONTACT DETAIL IN DATABSE
-				()->assertEquals(1,dao.changeContact(2, "9999999999")),
+				()->assertEquals(1,dao.changeContact(2, "2222222222")),
 				
 				// NEGATIVE TEST CASE
 				// TESTING CHANGE CONTACT METHOD FOR WRONG USER ID
 				// EXPECTING TO THROW AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.changeContact(500, "9999999999"))
+				()->assertThrows(GlobalException.class,()->dao.changeContact(500, "2222222222"))
 				);
 	}
 	
